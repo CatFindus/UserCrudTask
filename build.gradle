@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id "io.spring.dependency-management" version '1.1.5'
+}
+
+group = 'ru.puchinets'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter'
+    implementation group: 'org.postgresql', name: 'postgresql'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    implementation 'net.lbruun.springboot:preliquibase-spring-boot-starter:1.5.1'
+    implementation group: 'org.liquibase', name: 'liquibase-core'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+    implementation "org.mapstruct:mapstruct:1.5.5.Final"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final"
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+
+}
+
+test {
+    useJUnitPlatform()
+}
